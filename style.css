@@ -227,8 +227,8 @@ main {
 }
 
 .section {
-  padding-top: var(--space-xl);
-  padding-bottom: var(--space-xl);
+  padding-top: 3.25rem;
+  padding-bottom: 3.25rem;
 }
 
 .section__title {
@@ -263,8 +263,12 @@ main {
 
 /* Hero */
 .hero {
+  min-height: calc(100vh - var(--header-height));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding-top: var(--space-2xl);
-  padding-bottom: var(--space-xl);
+  padding-bottom: var(--space-2xl);
 }
 
 .hero__eyebrow {
@@ -334,6 +338,10 @@ main {
   color: var(--color-text);
   transform: translate(-1px, -1px);
   box-shadow: 4px 5px 0 rgba(0, 0, 0, 0.1);
+}
+
+#projects {
+  border-top: 2px dashed var(--color-border);
 }
 
 /* Projects */
@@ -442,6 +450,25 @@ main {
   font-weight: 700;
   text-decoration: underline;
   text-underline-offset: 3px;
+}
+
+/* Project language pills */
+.project-card__langs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+}
+
+.project-card__lang {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 0.125rem 0.5rem;
+  background: transparent;
+  border: 1.5px solid var(--color-accent);
+  border-radius: var(--radius-sketch);
+  color: var(--color-accent);
+  text-transform: uppercase;
 }
 
 /* About */
@@ -557,24 +584,21 @@ main {
   border: 2px solid var(--color-border);
   border-radius: var(--radius-sketch);
   box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.06);
-  color: #333333;
+  color: var(--color-text);
 }
 
-html[data-theme="dark"] .skills__chips li {
-  color: #dddddd;
-}
-
-section#skills .skills__chips img {
+section#skills .skills__chips .skill-icon {
+  display: inline-block;
+  flex-shrink: 0;
   width: 1.25rem;
   height: 1.25rem;
-  object-fit: contain;
-  filter: grayscale(100%) brightness(0.2);
-  /* Light mode - dark gray icons */
-}
-
-html[data-theme="dark"] section#skills .skills__chips img {
-  filter: grayscale(100%) brightness(1.8) invert(0.9);
-  /* Dark mode - light gray icons */
+  background-color: currentColor;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
 }
 
 /* Contact */

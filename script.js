@@ -99,10 +99,8 @@
 
   function filterProjects(type) {
     projectCards.forEach(function (card) {
-      const tag = card.querySelector(".project-card__tag");
-      const tagText = tag ? tag.textContent.trim().toLowerCase() : "";
-      const isActive = tagText === type;
-      card.style.display = isActive ? "" : "none";
+      const cardType = (card.getAttribute("data-type") || "").toLowerCase();
+      card.style.display = cardType === type ? "" : "none";
     });
   }
 
