@@ -60,13 +60,11 @@ body.notebook {
   line-height: 1.6;
   color: var(--color-text);
   background-color: var(--color-bg);
-  background-image: repeating-linear-gradient(
-    to bottom,
-    transparent,
-    transparent calc(var(--line-spacing) - 1px),
-    var(--color-line) calc(var(--line-spacing) - 1px),
-    var(--color-line) var(--line-spacing)
-  );
+  background-image: repeating-linear-gradient(to bottom,
+      transparent,
+      transparent calc(var(--line-spacing) - 1px),
+      var(--color-line) calc(var(--line-spacing) - 1px),
+      var(--color-line) var(--line-spacing));
   background-size: 100% var(--line-spacing);
   background-attachment: local;
 }
@@ -229,7 +227,8 @@ main {
 }
 
 .section {
-  padding-top: var(--space-2xl);
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-xl);
 }
 
 .section__title {
@@ -394,13 +393,11 @@ main {
   object-fit: cover;
   background-color: var(--color-bg);
   background-image:
-    repeating-linear-gradient(
-      45deg,
+    repeating-linear-gradient(45deg,
       transparent,
       transparent 6px,
       var(--color-line) 6px,
-      var(--color-line) 7px
-    );
+      var(--color-line) 7px);
   border-bottom: 2px solid var(--color-border);
 }
 
@@ -571,11 +568,13 @@ section#skills .skills__chips img {
   width: 1.25rem;
   height: 1.25rem;
   object-fit: contain;
-  filter: grayscale(100%) brightness(0.2); /* Light mode - dark gray icons */
+  filter: grayscale(100%) brightness(0.2);
+  /* Light mode - dark gray icons */
 }
 
 html[data-theme="dark"] section#skills .skills__chips img {
-  filter: grayscale(100%) brightness(1.8) invert(0.9); /* Dark mode - light gray icons */
+  filter: grayscale(100%) brightness(1.8) invert(0.9);
+  /* Dark mode - light gray icons */
 }
 
 /* Contact */
@@ -659,26 +658,26 @@ html[data-theme="dark"] section#skills .skills__chips img {
     display: block;
   }
 
-.site-nav__list {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  box-shadow: none;
-  flex-direction: column;
-  gap: var(--space-md);
-}
+  .site-nav__list {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
 
-.site-nav__list li {
-  width: 100%;
-}
+  .site-nav__list li {
+    width: 100%;
+  }
 
-.site-nav__list li a {
-  display: block;
-  text-align: center;
-  width: 100%;
-  padding: var(--space-sm) 0;
-}
+  .site-nav__list li a {
+    display: block;
+    text-align: center;
+    width: 100%;
+    padding: var(--space-sm) 0;
+  }
 
   .site-header.nav-open .nav-toggle__bar:nth-child(1) {
     transform: translateY(7px) rotate(45deg);
