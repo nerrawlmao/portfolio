@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="John Warren Manicane — software developer portfolio. Projects in app, game, and web development.">
+  <meta name="theme-color" content="#fffef5">
+  <meta property="og:title" content="John Warren Manicane | Software Developer">
+  <meta property="og:description" content="Portfolio showcasing app, game, and web projects by John Warren Manicane.">
+  <meta property="og:type" content="website">
+  <title>John Warren Manicane | Software Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body class="notebook">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <a class="logo" href="#home">JW</a>
+    <nav id="site-nav" class="site-nav" aria-label="Main">
+      <ul class="site-nav__list">
+        <li><a href="#home" data-nav="home">Home</a></li>
+        <li><a href="#projects" data-nav="projects">Projects</a></li>
+        <li><a href="#about" data-nav="about">About</a></li>
+        <li><a href="#skills" data-nav="skills">Skills</a></li>
+        <li><a href="#contact" data-nav="contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="site-header__actions">
+      <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+        <span class="theme-toggle__icon" aria-hidden="true">☾</span>
+      </button>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="home" class="hero">
+      <p class="hero__eyebrow">Software Developer</p>
+      <h1 class="hero__title">Hello, I'm John Warren</h1>
+      <p class="hero__lead">
+        BSCS student building apps, games, and web projects. This site tracks what I'm learning and shipping.
+      </p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#projects">View my work</a>
+        <a class="btn btn--secondary" href="mailto:jwarren.manicane@gmail.com">Email me</a>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <h2 class="section__title">Projects</h2>
+      <p class="section__intro">A few things I've built across app, game, and web development.</p>
+      <div class="projects__tabs" role="tablist">
+        <button class="tab-btn active" data-type="app" role="tab" aria-selected="true">App</button>
+        <button class="tab-btn" data-type="game" role="tab" aria-selected="false">Game</button>
+        <button class="tab-btn" data-type="web" role="tab" aria-selected="false">Web</button>
+        <button class="tab-btn" data-type="other" role="tab" aria-selected="false">Other</button>
+      </div>
+      <ul class="project-grid">
+        <li class="project-card">
+          <img class="project-card__image" src="images/to-do-list.png" alt="To-Do List app screenshot" width="320"
+            height="180" loading="lazy">
+          <div class="project-card__body">
+            <span class="project-card__tag">App</span>
+            <h3 class="project-card__title">To-Do List</h3>
+            <p class="project-card__desc">A mobile task manager for organizing daily to-dos.</p>
+            <div class="project-card__links">
+              <a href="#" class="project-card__link">Demo</a>
+              <a href="#" class="project-card__link">Code</a>
+            </div>
+          </div>
+        </li>
+        <li class="project-card">
+          <img class="project-card__image" src="images/math-obby.png" alt="Sneeze Clicker game screenshot" width="320"
+            height="180" loading="lazy">
+          <div class="project-card__body">
+            <span class="project-card__tag">Game</span>
+            <h3 class="project-card__title">Sneeze Clicker</h3>
+            <p class="project-card__desc">A Roblox clicker game with upgrades and progression.</p>
+            <div class="project-card__links">
+              <a href="#" class="project-card__link">Play</a>
+            </div>
+          </div>
+        </li>
+        <li class="project-card">
+          <img class="project-card__image" src="images/math-obby.png" alt="Math Obby game screenshot" width="320"
+            height="180" loading="lazy">
+          <div class="project-card__body">
+            <span class="project-card__tag">Game</span>
+            <h3 class="project-card__title">Math Obby</h3>
+            <p class="project-card__desc">An obstacle course that quizzes players on math problems.</p>
+            <div class="project-card__links">
+              <a href="#" class="project-card__link">Play</a>
+            </div>
+          </div>
+        </li>
+        <li class="project-card">
+          <img class="project-card__image" src="images/watch.png" alt="Wildlife PH website screenshot" width="320"
+            height="180" loading="lazy">
+          <div class="project-card__body">
+            <span class="project-card__tag">Web</span>
+            <h3 class="project-card__title">Wildlife PH</h3>
+            <p class="project-card__desc">A site highlighting Philippine wildlife and conservation.</p>
+            <div class="project-card__links">
+              <a href="#" class="project-card__link">Live</a>
+              <a href="#" class="project-card__link">Code</a>
+            </div>
+          </div>
+        </li>
+        <li class="project-card">
+          <img class="project-card__image" src="images/watch.png" alt="Watch web app screenshot" width="320"
+            height="180" loading="lazy">
+          <div class="project-card__body">
+            <span class="project-card__tag">Web</span>
+            <h3 class="project-card__title">Watch</h3>
+            <p class="project-card__desc">A web experience built around browsing and discovery.</p>
+            <div class="project-card__links">
+              <a href="#" class="project-card__link">Live</a>
+              <a href="#" class="project-card__link">Code</a>
+            </div>
+          </div>
+        </li>
+        <li class="project-card">
+          <img class="project-card__image" src="images/student-grading-system-management.png"
+            alt="Student Grading System Management screenshot" width="320" height="180" loading="lazy">
+          <div class="project-card__body">
+            <span class="project-card__tag">Other</span>
+            <h3 class="project-card__title">Student Grading System</h3>
+            <p class="project-card__desc">A system for managing student records and grades.</p>
+            <div class="project-card__links">
+              <a href="#" class="project-card__link">Demo</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="about" class="section">
+      <h2 class="section__title">About</h2>
+      <div class="about">
+        <div class="about__bio">
+          <p>
+            Hi, I'm John Warren Manicane, a 2nd-year BSCS student who loves creating things that pique my interest.
+            I'm exploring different areas in tech to find what I enjoy most and want to master.
+          </p>
+          <p>
+            I built this portfolio to showcase my work, track my growth, and stay motivated to keep building.
+          </p>
+          <p>
+            <a class="about__cv"
+              href="https://drive.google.com/file/d/168nCmzJ_enKrKJBkJdjYUGAyja2Qfif8/view?usp=sharing" target="_blank"
+              rel="noopener noreferrer">View CV</a>
+          </p>
+        </div>
+        <div class="about__focus">
+          <h3 class="about__subtitle">What I do</h3>
+          <ul class="about__list">
+            <li>App development</li>
+            <li>Game development</li>
+            <li>Web development</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <h2 class="section__title">Skills</h2>
+      <p class="section__intro">Technologies I use across different kinds of projects.</p>
+      <div class="skills">
+        <div class="skills__group">
+          <h3 class="skills__label">Languages</h3>
+          <ul class="skills__chips">
+            <li><img src="https://cdn.simpleicons.org/javascript/currentColor" alt="JavaScript" width="20" height="20">
+              JavaScript</li>
+            <li><img src="https://cdn.simpleicons.org/typescript/currentColor" alt="TypeScript" width="20" height="20">
+              TypeScript</li>
+            <li><img src="images/icons/java.png" alt="Java" width="20" height="20"> Java</li>
+            <li><img src="https://cdn.simpleicons.org/python/currentColor" alt="Python" width="20" height="20"> Python
+            </li>
+            <li><img src="https://cdn.simpleicons.org/kotlin/currentColor" alt="Kotlin" width="20" height="20"> Kotlin
+            </li>
+            <li><img src="https://cdn.simpleicons.org/c/currentColor" alt="C" width="20" height="20"> C</li>
+            <li><img src="https://cdn.simpleicons.org/cplusplus/currentColor" alt="C++" width="20" height="20"> C++</li>
+            <li><img src="https://cdn.simpleicons.org/luau/currentColor" alt="Lua" width="20" height="20"> Lua</li>
+          </ul>
+        </div>
+        <div class="skills__group">
+          <h3 class="skills__label">Frontend</h3>
+          <ul class="skills__chips">
+            <li><img src="https://cdn.simpleicons.org/html5/currentColor" alt="HTML" width="20" height="20"> HTML</li>
+            <li><img src="https://cdn.simpleicons.org/css/currentColor" alt="CSS" width="20" height="20"> CSS</li>
+            <li><img src="https://cdn.simpleicons.org/expo/currentColor" alt="Expo" width="20" height="20"> Expo</li>
+            <li><img src="https://cdn.simpleicons.org/react/currentColor" alt="React" width="20" height="20"> React</li>
+            <li><img src="https://cdn.simpleicons.org/react/currentColor" alt="React Native" width="20" height="20">
+              React Native</li>
+          </ul>
+        </div>
+        <div class="skills__group">
+          <h3 class="skills__label">Backend & Databases</h3>
+          <ul class="skills__chips">
+            <li><img src="https://cdn.simpleicons.org/django/currentColor" alt="Django" width="20" height="20"> Django
+            </li>
+            <li><img src="https://cdn.simpleicons.org/nodedotjs/currentColor" alt="Node.js" width="20" height="20">
+              Node.js</li>
+            <li><img src="https://cdn.simpleicons.org/supabase/currentColor" alt="Supabase" width="20" height="20">
+              Supabase</li>
+            <li><img src="https://cdn.simpleicons.org/appwrite/currentColor" alt="Appwrite" width="20" height="20">
+              Appwrite</li>
+            <li><img src="https://cdn.simpleicons.org/firebase/currentColor" alt="Firebase" width="20" height="20">
+              Firebase</li>
+            <li><img src="https://cdn.simpleicons.org/mysql/currentColor" alt="MySQL" width="20" height="20"> MySQL</li>
+            <li><img src="https://cdn.simpleicons.org/postgresql/currentColor" alt="PostgreSQL" width="20" height="20">
+              PostgreSQL</li>
+          </ul>
+        </div>
+        <div class="skills__group">
+          <h3 class="skills__label">Tools</h3>
+          <ul class="skills__chips">
+            <li><img src="https://cdn.simpleicons.org/figma/currentColor" alt="Figma" width="20" height="20"> Figma</li>
+            <li><img src="https://cdn.simpleicons.org/blender/currentColor" alt="Blender" width="20" height="20">
+              Blender</li>
+            <li><img src="https://cdn.simpleicons.org/roblox/currentColor" alt="Roblox Studio" width="20" height="20">
+              Roblox Studio</li>
+            <li><img src="https://cdn.simpleicons.org/railway/currentColor" alt="Railway" width="20" height="20">
+              Railway</li>
+            <li><img src="https://cdn.simpleicons.org/github/currentColor" alt="GitHub" width="20" height="20"> GitHub
+            </li>
+            <li><img src="https://cdn.simpleicons.org/vercel/currentColor" alt="Vercel" width="20" height="20">
+              Vercel</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section section--contact">
+      <h2 class="section__title">Contact</h2>
+      <p class="contact__text">
+        I'm open to full-time roles and freelance work. Feel free to reach out—even just to say hi.
+      </p>
+      <div class="contact__actions">
+        <a class="btn btn--primary" href="mailto:manicane4321@gmail.com">manicane4321@gmail.com</a>
+        <a class="btn btn--secondary" href="https://www.linkedin.com/in/john-warren-manicane-76326432a/" target="_blank"
+          rel="noopener noreferrer">LinkedIn</a>
+        <a class="btn btn--secondary" href="https://github.com/nerrawlmao" target="_blank"
+          rel="noopener noreferrer">GitHub</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p class="site-footer__copy">&copy; 2026 John Warren Manicane</p>
+  </footer>
+</body>
+
+</html>
