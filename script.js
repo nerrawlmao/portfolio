@@ -7,7 +7,6 @@
   const themeIcon = document.querySelector(".theme-toggle__icon");
   const metaThemeColor = document.querySelector('meta[name="theme-color"]');
   const tabButtons = document.querySelectorAll(".tab-btn");
-  const projectCards = document.querySelectorAll(".project-card");
 
   if (!header || !toggle || !nav) return;
 
@@ -97,16 +96,118 @@
     });
   }
 
-  function filterProjects(type) {
-    projectCards.forEach(function (card) {
-      const cardType = (card.getAttribute("data-type") || "").toLowerCase();
-      card.style.display = cardType === type ? "" : "none";
+  var projects = [
+    {
+      type: "app",
+      title: "To-Do List",
+      desc: "A mobile task manager for organizing daily to-dos.",
+      img: "images/app/To-Do List.png",
+      alt: "To-Do List app screenshot",
+      langs: ["React Native", "TypeScript"],
+      links: [{ text: "Demo", href: "#" }, { text: "Code", href: "#" }]
+    },
+    {
+      type: "game",
+      title: "Math Obby",
+      desc: "An obstacle course that quizzes players on math problems.",
+      img: "images/game/Math Obby.png",
+      alt: "Math Obby game screenshot",
+      langs: ["Luau", "Roblox Studio"],
+      links: [{ text: "Play", href: "#" }]
+    },
+    {
+      type: "web",
+      title: "Wildlife PH",
+      desc: "A site highlighting Philippine wildlife and conservation.",
+      img: "images/web/Wildlife PH.png",
+      alt: "Wildlife PH website screenshot",
+      langs: ["HTML", "CSS", "JavaScript"],
+      links: [{ text: "Live", href: "#" }, { text: "Code", href: "#" }]
+    },
+    {
+      type: "web",
+      title: "Watch",
+      desc: "A web experience built around browsing and discovery.",
+      img: "images/web/Watch.png",
+      alt: "Watch web app screenshot",
+      langs: ["HTML", "CSS", "JavaScript"],
+      links: [{ text: "Live", href: "#" }, { text: "Code", href: "#" }]
+    },
+    {
+      type: "other",
+      title: "Student Grading System",
+      desc: "A system for managing student records and grades.",
+      img: "images/other/Student Grading System.png",
+      alt: "Student Grading System Management screenshot",
+      langs: ["Java", "MySQL"],
+      links: [{ text: "Demo", href: "#" }]
+    }
+  ];
+
+  var grid = document.querySelector(".project-grid");
+
+  function renderProjects(type) {
+    grid.innerHTML = "";
+    var filtered = projects.filter(function (p) { return p.type === type; });
+
+    filtered.forEach(function (p) {
+      var li = document.createElement("li");
+      li.className = "project-card";
+      li.setAttribute("data-type", p.type);
+
+      var img = document.createElement("img");
+      img.className = "project-card__image";
+      img.src = p.img;
+      img.alt = p.alt;
+      img.width = 320;
+      img.height = 180;
+      img.loading = "lazy";
+      li.appendChild(img);
+
+      var body = document.createElement("div");
+      body.className = "project-card__body";
+
+      var title = document.createElement("h3");
+      title.className = "project-card__title";
+      title.textContent = p.title;
+      body.appendChild(title);
+
+      var desc = document.createElement("p");
+      desc.className = "project-card__desc";
+      desc.textContent = p.desc;
+      body.appendChild(desc);
+
+      var langs = document.createElement("div");
+      langs.className = "project-card__langs";
+      p.langs.forEach(function (l) {
+        var span = document.createElement("span");
+        span.className = "project-card__lang";
+        span.textContent = l;
+        langs.appendChild(span);
+      });
+      body.appendChild(langs);
+
+      if (p.links.length) {
+        var links = document.createElement("div");
+        links.className = "project-card__links";
+        p.links.forEach(function (lk) {
+          var a = document.createElement("a");
+          a.className = "project-card__link";
+          a.href = lk.href;
+          a.textContent = lk.text;
+          links.appendChild(a);
+        });
+        body.appendChild(links);
+      }
+
+      li.appendChild(body);
+      grid.appendChild(li);
     });
   }
 
   function setActiveTab(activeButton) {
     tabButtons.forEach(function (btn) {
-      const isActive = btn === activeButton;
+      var isActive = btn === activeButton;
       btn.classList.toggle("active", isActive);
       btn.setAttribute("aria-selected", String(isActive));
     });
@@ -114,11 +215,11 @@
 
   tabButtons.forEach(function (button) {
     button.addEventListener("click", function () {
-      const type = this.getAttribute("data-type");
-      filterProjects(type);
+      var type = this.getAttribute("data-type");
+      renderProjects(type);
       setActiveTab(this);
     });
   });
 
-  filterProjects("app");
+  renderProjects("app");
 })();
