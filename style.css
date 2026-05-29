@@ -340,7 +340,7 @@ main {
   box-shadow: 4px 5px 0 rgba(0, 0, 0, 0.1);
 }
 
-#projects {
+#about {
   border-top: 2px dashed var(--color-border);
 }
 
@@ -499,6 +499,12 @@ main {
 
 .about__cv {
   font-weight: 700;
+}
+
+.about__focus-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
 }
 
 .about__subtitle {

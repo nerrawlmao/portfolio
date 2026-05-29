@@ -69,7 +69,7 @@
     });
   }
 
-  const sections = ["home", "projects", "about", "skills", "contact"]
+  const sections = ["home", "about", "projects", "skills", "contact"]
     .map(function (id) {
       return document.getElementById(id);
     })
@@ -99,12 +99,21 @@
   var projects = [
     {
       type: "app",
-      title: "To-Do List",
-      desc: "A mobile task manager for organizing daily to-dos.",
-      img: "images/app/To-Do List.png",
-      alt: "To-Do List app screenshot",
-      langs: ["React Native", "TypeScript"],
-      links: [{ text: "Demo", href: "#" }, { text: "Code", href: "#" }]
+      title: "To-Do",
+      desc: "A simple and modern to-do app for Android.",
+      img: "images/app/To-Do.png",
+      alt: "To-Do app screenshot",
+      langs: ["Kotlin", "Jetpack Compose"],
+      links: [{ text: "Code", href: "https://github.com/nerrawlmao/to-do" }]
+    },
+    {
+      type: "game",
+      title: "Cannon Clash",
+      desc: "A two-player artillery duel with wind and mass physics.",
+      img: "images/game/Cannon Clash.png",
+      alt: "Cannon Clash game screenshot",
+      langs: ["Java"],
+      links: [{ text: "Code", href: "https://github.com/nerrawlmao/cannon-clash" }]
     },
     {
       type: "game",
@@ -113,7 +122,7 @@
       img: "images/game/Math Obby.png",
       alt: "Math Obby game screenshot",
       langs: ["Luau", "Roblox Studio"],
-      links: [{ text: "Play", href: "#" }]
+      links: [{ text: "Play", href: "https://www.roblox.com/games/132959728970709/Math-Obby" }]
     },
     {
       type: "web",
@@ -122,7 +131,7 @@
       img: "images/web/Wildlife PH.png",
       alt: "Wildlife PH website screenshot",
       langs: ["HTML", "CSS", "JavaScript"],
-      links: [{ text: "Live", href: "#" }, { text: "Code", href: "#" }]
+      links: [{ text: "Live", href: "https://wildlife-ph.vercel.app/" }, { text: "Code", href: "https://github.com/nerrawlmao/wildlifeph" }]
     },
     {
       type: "web",
@@ -131,7 +140,16 @@
       img: "images/web/Watch.png",
       alt: "Watch web app screenshot",
       langs: ["HTML", "CSS", "JavaScript"],
-      links: [{ text: "Live", href: "#" }, { text: "Code", href: "#" }]
+      links: [{ text: "Live", href: "https://jw-watch.vercel.app/" }, { text: "Code", href: "https://github.com/nerrawlmao/watch" }]
+    },
+    {
+      type: "other",
+      title: "CueFlow",
+      desc: "A system for managing billiard tables, sessions, and payments.",
+      img: "images/other/CueFlow.png",
+      alt: "CueFlow system screenshot",
+      langs: ["Java", "MySQL"],
+      links: [{ text: "Code", href: "https://github.com/nerrawlmao/cueflow" }]
     },
     {
       type: "other",
@@ -139,8 +157,8 @@
       desc: "A system for managing student records and grades.",
       img: "images/other/Student Grading System.png",
       alt: "Student Grading System Management screenshot",
-      langs: ["Java", "MySQL"],
-      links: [{ text: "Demo", href: "#" }]
+      langs: ["C"],
+      links: [{ text: "Code", href: "https://github.com/nerrawlmao/student-grading-system-management" }]
     }
   ];
 
@@ -194,6 +212,8 @@
           var a = document.createElement("a");
           a.className = "project-card__link";
           a.href = lk.href;
+          a.target = "_blank";
+          a.rel = "noopener noreferrer";
           a.textContent = lk.text;
           links.appendChild(a);
         });
