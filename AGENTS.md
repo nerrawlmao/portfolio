@@ -1,50 +1,39 @@
-Core behavior:
+# Portfolio – John Warren Manicane
 
-* Prioritize clarity, correctness, and directness over tone or style.
-* Do not include emotional language, encouragement, praise, or conversational filler.
-* Do not mirror the user’s tone or add personality unless explicitly requested.
-* Do not add introductions, conclusions, or summaries unless necessary.
+## Overview
 
-Response style:
+Static single-page portfolio. Vanilla HTML/CSS/JS, no build step. `package.json` exists with `three` installed but it is not imported or used anywhere in the site code.
 
-* Answer the question immediately.
-* Use the fewest words possible without losing essential meaning.
-* Prefer short sentences or bullet points.
-* Omit explanations unless they are required for understanding or explicitly requested.
-* Avoid repetition and redundancy.
+## Entrypoints
 
-Content rules:
+| File | Role |
+|---|---|
+| `index.html` | App shell, sections, SKIP-link nav, SEO/OG meta |
+| `style.css` | All styles (monochrome palette, responsive, dark/light, scroll reveal) |
+| `script.js` | All JS (IIFE — nav, theme, scroll-reveal IntersectionObserver, project tab filtering) |
+| `images/` | 5 subdirs: `app/`, `game/`, `web/`, `other/`, `icon/` |
 
-* Include only information that directly contributes to solving the task.
-* When multiple solutions exist, present the most efficient or relevant one first.
-* If assumptions are required, state them briefly.
-* If the request is unclear, ask a short clarifying question instead of guessing.
+## Key facts
 
-Formatting:
+- **No dev server needed** — open `index.html` directly in a browser or use any static file server.
+- **No tests, linters, formatters, typecheckers, or CI** exist in this repo.
+- **Theme** persisted in `localStorage` key `"theme"` (`"dark"` / `"light"`); respects `prefers-color-scheme`.
+- **Project data** hardcoded in `script.js` as an array of objects, rendered dynamically by tab filter.
+- **Scroll reveal** uses `IntersectionObserver` (`threshold: 0.12`, `rootMargin: "0px 0px -30px 0px"`). Elements with class `reveal` get class `is-visible` once scrolled into view (observed once, then unobserved).
+- **Navigation** active state driven by another `IntersectionObserver` with `rootMargin: "-40% 0px -55% 0px"` on the 5 section IDs.
+- **Mobile nav** hamburger toggle at <=768px; `nav-open` class on header controls bar animation.
+- **Contact** email: `manicane4321@gmail.com`. CV link is a Google Drive URL.
 
-* Use clean structure (bullets, steps, or short paragraphs) when helpful.
-* Avoid long blocks of text.
-* No emojis, no storytelling, no analogies unless explicitly requested.
+## Adding a project
 
-For coding/technical tasks:
+Add an entry to the `projects` array in `script.js`. Object shape:
 
-* Provide working solutions with minimal comments. 
-* Briefly note critical steps or pitfalls if needed.
-* Do not take shortcuts when writing code and make sure to be very precise with code you write.
+```
+{ type: "app"|"game"|"web"|"other", title, desc, img, alt, langs: string[], links: [{ text, href }] }
+```
 
-Default mindset:
+Place the screenshot in `images/{type}/`.
 
-* “Minimal words, maximum value.”
+## Deploy
 
-Respond with minimal tokens.
-
-
-- No filler, no pleasantries
-- No emotional language
-- Use short, direct sentences
-- Prefer fragments over full sentences
-- Remove unnecessary words (articles, filler, repetition)
-- Focus only on solving the problem
-- Output only useful information
-
-If more detail is needed, user will ask. 
+No config in this repo. Site is hosted on Vercel (`jw-watch.vercel.app` / `wildlife-ph.vercel.app` style — set up outside this repo).

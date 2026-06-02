@@ -1,30 +1,33 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
     content="John Warren Manicane — software developer portfolio. Projects in app, game, and web development.">
-  <meta name="theme-color" content="#fffef5">
   <meta property="og:title" content="John Warren Manicane | Software Developer">
   <meta property="og:description" content="Portfolio showcasing app, game, and web projects by John Warren Manicane.">
   <meta property="og:type" content="website">
-  <link rel="icon" type="image/png" sizes="32x32" href="images/icon/logo.png?v=1">
-  <link rel="shortcut icon" href="images/icon/logo.png?v=1">
   <title>John Warren Manicane | Software Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
+  <script type="module" src="/src/main.jsx"></script>
 </head>
 
-<body class="notebook">
+  <body>
+  <div id="liquid-ether-bg"></div>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
-    <a class="logo" href="#home">JW</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+    </button>
     <nav id="site-nav" class="site-nav" aria-label="Main">
       <ul class="site-nav__list">
         <li><a href="#home" data-nav="home">Home</a></li>
@@ -33,25 +36,17 @@
         <li><a href="#skills" data-nav="skills">Skills</a></li>
         <li><a href="#contact" data-nav="contact">Contact</a></li>
       </ul>
+      <span class="nav-indicator" aria-hidden="true"></span>
     </nav>
-    <div class="site-header__actions">
-      <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
-        <span class="theme-toggle__icon" aria-hidden="true">☾</span>
-      </button>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
-        <span class="nav-toggle__bar"></span>
-        <span class="nav-toggle__bar"></span>
-        <span class="nav-toggle__bar"></span>
-      </button>
-    </div>
   </header>
 
   <main id="main">
-    <section id="home" class="hero">
+    <section id="home" class="hero reveal">
+      <span class="hero__index">01</span>
       <p class="hero__eyebrow">Software Developer</p>
-      <h1 class="hero__title">Hello, I'm John Warren</h1>
+      <h1 class="hero__title">John Warren</h1>
       <p class="hero__lead">
-        BSCS student building apps, games, and web projects. This site tracks what I'm learning and creating.
+        BSCS student building apps, games, and web projects.<br>This site tracks what I'm learning and creating.
       </p>
       <div class="hero__actions">
         <a class="btn btn--primary" href="#about">View my work</a>
@@ -59,7 +54,8 @@
       </div>
     </section>
 
-    <section id="about" class="section">
+    <section id="about" class="section reveal">
+      <span class="section__index">02</span>
       <h2 class="section__title">About</h2>
       <div class="about">
         <div class="about__bio">
@@ -71,9 +67,7 @@
             I built this portfolio to showcase my work, track my growth, and stay motivated to keep building.
           </p>
           <p>
-            <a class="about__cv"
-              href="https://drive.google.com/file/d/1reBwqqwHNdZ2i6oi3YCRoPetWw4cux-4/view?usp=sharing" target="_blank"
-              rel="noopener noreferrer">View CV</a>
+            <a class="about__cv" href="https://drive.google.com/file/d/1reBwqqwHNdZ2i6oi3YCRoPetWw4cux-4/view?usp=sharing" target="_blank" rel="noopener noreferrer">View CV</a>
           </p>
         </div>
         <div class="about__focus-group">
@@ -95,9 +89,11 @@
           </div>
         </div>
       </div>
+      <div class="section__divider"></div>
     </section>
 
-    <section id="projects" class="section">
+    <section id="projects" class="section reveal">
+      <span class="section__index">03</span>
       <h2 class="section__title">Projects</h2>
       <p class="section__intro">A few things I've built across app, game, and web development.</p>
       <div class="projects__tabs" role="tablist">
@@ -107,90 +103,79 @@
         <button class="tab-btn" data-type="other" role="tab" aria-selected="false">Other</button>
       </div>
       <ul class="project-grid"></ul>
+      <div class="section__divider"></div>
     </section>
 
-    <section id="skills" class="section">
+    <section id="skills" class="section reveal">
+      <span class="section__index">04</span>
       <h2 class="section__title">Skills</h2>
       <p class="section__intro">Technologies I use across different kinds of projects.</p>
       <div class="skills">
         <div class="skills__group">
           <h3 class="skills__label">Languages</h3>
           <ul class="skills__chips">
-            <li><span class="skill-icon" style="mask-image:url('https://cdn.simpleicons.org/javascript/currentColor')"></span>
-              JavaScript</li>
-            <li><span class="skill-icon" style="mask-image:url('https://cdn.simpleicons.org/typescript/currentColor')"></span>
-              TypeScript</li>
-            <li><span class="skill-icon" style="mask-image:url('images/icon/java.png')"></span> Java</li>
-            <li><span class="skill-icon" style="mask-image:url('https://cdn.simpleicons.org/python/currentColor')"></span> Python
-            </li>
-            <li><span class="skill-icon" style="mask-image:url('https://cdn.simpleicons.org/kotlin/currentColor')"></span> Kotlin
-            </li>
-            <li><span class="skill-icon" style="mask-image:url('https://cdn.simpleicons.org/c/currentColor')"></span> C</li>
-            <li><span class="skill-icon" style="mask-image:url('https://cdn.simpleicons.org/cplusplus/currentColor')"></span> C++</li>
-            <li><span class="skill-icon" style="mask-image:url('https://cdn.simpleicons.org/luau/currentColor')"></span> Luau</li>
+            <li><span class="skill-icon" style="mask-image:url('https://cdn.simpleicons.org/c/currentColor')"></span>C</li>
+            <li><span class="skill-icon" style="mask-image:url('https://cdn.simpleicons.org/cplusplus/currentColor')"></span>C++</li>
+            <li><span class="skill-icon" style="mask-image:url('images/icon/java.png')"></span>Java</li>
+            <li><span class="skill-icon" style="mask-image:url('https://cdn.simpleicons.org/javascript/currentColor')"></span>JavaScript</li>
+            <li><span class="skill-icon" style="mask-image:url('https://cdn.simpleicons.org/kotlin/currentColor')"></span>Kotlin</li>
+            <li><span class="skill-icon" style="mask-image:url('https://cdn.simpleicons.org/luau/currentColor')"></span>Luau</li>
+            <li><span class="skill-icon" style="mask-image:url('https://cdn.simpleicons.org/php/currentColor')"></span>PHP</li>
+            <li><span class="skill-icon" style="mask-image:url('https://cdn.simpleicons.org/python/currentColor')"></span>Python</li>
+            <li><span class="skill-icon" style="mask-image:url('https://cdn.simpleicons.org/typescript/currentColor')"></span>TypeScript</li>
           </ul>
         </div>
         <div class="skills__group">
           <h3 class="skills__label">Frontend</h3>
           <ul class="skills__chips">
-            <li><span class="skill-icon" style="mask-image:url('https://cdn.simpleicons.org/html5/currentColor')"></span> HTML</li>
-            <li><span class="skill-icon" style="mask-image:url('https://cdn.simpleicons.org/css/currentColor')"></span> CSS</li>
-            <li><span class="skill-icon" style="mask-image:url('https://cdn.simpleicons.org/expo/currentColor')"></span> Expo</li>
-            <li><span class="skill-icon" style="mask-image:url('https://cdn.simpleicons.org/react/currentColor')"></span> React</li>
-            <li><span class="skill-icon" style="mask-image:url('https://cdn.simpleicons.org/react/currentColor')"></span>
-              React Native</li>
-            <li><span class="skill-icon" style="mask-image:url('https://cdn.simpleicons.org/jetpackcompose/currentColor')"></span>
-              Jetpack Compose</li>
+            <li><span class="skill-icon" style="mask-image:url('https://cdn.simpleicons.org/css/currentColor')"></span>CSS</li>
+            <li><span class="skill-icon" style="mask-image:url('https://cdn.simpleicons.org/expo/currentColor')"></span>Expo</li>
+            <li><span class="skill-icon" style="mask-image:url('https://cdn.simpleicons.org/html5/currentColor')"></span>HTML</li>
+            <li><span class="skill-icon" style="mask-image:url('https://cdn.simpleicons.org/jetpackcompose/currentColor')"></span>Jetpack Compose</li>
+            <li><span class="skill-icon" style="mask-image:url('https://cdn.simpleicons.org/react/currentColor')"></span>React</li>
+            <li><span class="skill-icon" style="mask-image:url('https://cdn.simpleicons.org/react/currentColor')"></span>React Native</li>
+            <li><span class="skill-icon" style="mask-image:url('https://cdn.simpleicons.org/vite/currentColor')"></span>Vite</li>
           </ul>
         </div>
         <div class="skills__group">
-          <h3 class="skills__label">Backend & Databases</h3>
+          <h3 class="skills__label">Backend &amp; Databases</h3>
           <ul class="skills__chips">
-            <li><span class="skill-icon" style="mask-image:url('https://cdn.simpleicons.org/django/currentColor')"></span> Django
-            </li>
-            <li><span class="skill-icon" style="mask-image:url('https://cdn.simpleicons.org/nodedotjs/currentColor')"></span>
-              Node.js</li>
-            <li><span class="skill-icon" style="mask-image:url('https://cdn.simpleicons.org/supabase/currentColor')"></span>
-              Supabase</li>
-            <li><span class="skill-icon" style="mask-image:url('https://cdn.simpleicons.org/appwrite/currentColor')"></span>
-              Appwrite</li>
-            <li><span class="skill-icon" style="mask-image:url('https://cdn.simpleicons.org/firebase/currentColor')"></span>
-              Firebase</li>
-            <li><span class="skill-icon" style="mask-image:url('https://cdn.simpleicons.org/mysql/currentColor')"></span> MySQL</li>
-            <li><span class="skill-icon" style="mask-image:url('https://cdn.simpleicons.org/postgresql/currentColor')"></span>
-              PostgreSQL</li>
+            <li><span class="skill-icon" style="mask-image:url('https://cdn.simpleicons.org/appwrite/currentColor')"></span>Appwrite</li>
+            <li><span class="skill-icon" style="mask-image:url('https://cdn.simpleicons.org/django/currentColor')"></span>Django</li>
+            <li><span class="skill-icon" style="mask-image:url('https://cdn.simpleicons.org/firebase/currentColor')"></span>Firebase</li>
+            <li><span class="skill-icon" style="mask-image:url('https://cdn.simpleicons.org/mysql/currentColor')"></span>MySQL</li>
+            <li><span class="skill-icon" style="mask-image:url('https://cdn.simpleicons.org/nodedotjs/currentColor')"></span>Node.js</li>
+            <li><span class="skill-icon" style="mask-image:url('https://cdn.simpleicons.org/numpy/currentColor')"></span>NumPy</li>
+            <li><span class="skill-icon" style="mask-image:url('https://cdn.simpleicons.org/pandas/currentColor')"></span>Pandas</li>
+            <li><span class="skill-icon" style="mask-image:url('https://cdn.simpleicons.org/postgresql/currentColor')"></span>PostgreSQL</li>
+            <li><span class="skill-icon" style="mask-image:url('https://cdn.simpleicons.org/supabase/currentColor')"></span>Supabase</li>
           </ul>
         </div>
         <div class="skills__group">
           <h3 class="skills__label">Tools</h3>
           <ul class="skills__chips">
-            <li><span class="skill-icon" style="mask-image:url('https://cdn.simpleicons.org/figma/currentColor')"></span> Figma</li>
-            <li><span class="skill-icon" style="mask-image:url('https://cdn.simpleicons.org/blender/currentColor')"></span>
-              Blender</li>
-            <li><span class="skill-icon" style="mask-image:url('https://cdn.simpleicons.org/roblox/currentColor')"></span>
-              Roblox Studio</li>
-            <li><span class="skill-icon" style="mask-image:url('https://cdn.simpleicons.org/railway/currentColor')"></span>
-              Railway</li>
-            <li><span class="skill-icon" style="mask-image:url('https://cdn.simpleicons.org/github/currentColor')"></span> GitHub
-            </li>
-            <li><span class="skill-icon" style="mask-image:url('https://cdn.simpleicons.org/vercel/currentColor')"></span>
-              Vercel</li>
+            <li><span class="skill-icon" style="mask-image:url('https://cdn.simpleicons.org/blender/currentColor')"></span>Blender</li>
+            <li><span class="skill-icon" style="mask-image:url('https://cdn.simpleicons.org/figma/currentColor')"></span>Figma</li>
+            <li><span class="skill-icon" style="mask-image:url('https://cdn.simpleicons.org/github/currentColor')"></span>GitHub</li>
+            <li><span class="skill-icon" style="mask-image:url('https://cdn.simpleicons.org/railway/currentColor')"></span>Railway</li>
+            <li><span class="skill-icon" style="mask-image:url('https://cdn.simpleicons.org/roblox/currentColor')"></span>Roblox Studio</li>
+            <li><span class="skill-icon" style="mask-image:url('https://cdn.simpleicons.org/vercel/currentColor')"></span>Vercel</li>
           </ul>
         </div>
       </div>
+      <div class="section__divider"></div>
     </section>
 
-    <section id="contact" class="section section--contact">
+    <section id="contact" class="section section--contact reveal">
+      <span class="section__index">05</span>
       <h2 class="section__title">Contact</h2>
       <p class="contact__text">
         I'm open to full-time roles and freelance work. Feel free to reach out, even just to say hi.
       </p>
       <div class="contact__actions">
         <a class="btn btn--primary" href="mailto:manicane4321@gmail.com">manicane4321@gmail.com</a>
-        <a class="btn btn--secondary" href="https://www.linkedin.com/in/john-warren-manicane-76326432a/" target="_blank"
-          rel="noopener noreferrer">LinkedIn</a>
-        <a class="btn btn--secondary" href="https://github.com/nerrawlmao" target="_blank"
-          rel="noopener noreferrer">GitHub</a>
+        <a class="btn btn--secondary" href="https://www.linkedin.com/in/john-warren-manicane-76326432a/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a class="btn btn--secondary" href="https://github.com/nerrawlmao" target="_blank" rel="noopener noreferrer">GitHub</a>
       </div>
     </section>
   </main>
