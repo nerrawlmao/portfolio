@@ -219,7 +219,6 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-top: var(--header-height);
 }
 
 .hero__eyebrow {
