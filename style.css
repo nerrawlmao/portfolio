@@ -24,7 +24,6 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 16px;
-  overscroll-behavior: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -43,7 +42,6 @@ body {
   color: var(--gray-800);
   background-color: var(--white);
   overflow-x: hidden;
-  overscroll-behavior: none;
   -webkit-user-select: none;
   user-select: none;
 }
@@ -185,7 +183,7 @@ main {
   z-index: 3;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 2rem 6rem;
+  padding: 0 2rem;
 }
 
 .section {
@@ -726,7 +724,7 @@ main {
     transform: translateY(-6.5px) rotate(-45deg);
   }
 
-  main { padding: 0 1.25rem 4rem; }
+  main { padding: 0 1.25rem; }
 
   .section { padding-top: 4rem; padding-bottom: 4rem; }
 
