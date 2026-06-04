@@ -187,8 +187,8 @@ main {
 }
 
 .section {
-  padding-top: 7rem;
-  padding-bottom: 7rem;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
 }
 
 .section__divider {
@@ -726,7 +726,7 @@ main {
 
   main { padding: 0 1.25rem; }
 
-  .section { padding-top: 4rem; padding-bottom: 4rem; }
+  .section { padding-top: 5rem; padding-bottom: 5rem; }
 
   .section--contact { padding-bottom: 0; }
 
