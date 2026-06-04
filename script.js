@@ -34,11 +34,20 @@
     link.addEventListener("click", function () { setNavOpen(false); });
   });
 
-  function setHeaderScrolled() {
-    header.classList.toggle("is-scrolled", window.scrollY > 8);
+  var lastScrollY = window.scrollY;
+
+  function onScroll() {
+    var sy = window.scrollY;
+    if (sy <= 8) {
+      header.classList.remove("is-scrolled", "is-hidden");
+    } else {
+      header.classList.add("is-scrolled");
+      header.classList.toggle("is-hidden", sy > lastScrollY);
+    }
+    lastScrollY = sy;
   }
-  setHeaderScrolled();
-  window.addEventListener("scroll", setHeaderScrolled, { passive: true });
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
 
   updateNavIndicator();
   window.addEventListener("resize", updateNavIndicator);
@@ -166,6 +175,82 @@
       setActiveTab(this);
     });
   });
+
+  var skillsData = [
+    { label: "Languages", items: [
+      { icon: "https://cdn.simpleicons.org/c/currentColor", text: "C" },
+      { icon: "https://cdn.simpleicons.org/cplusplus/currentColor", text: "C++" },
+      { icon: "images/icon/java.png", text: "Java" },
+      { icon: "https://cdn.simpleicons.org/javascript/currentColor", text: "JavaScript" },
+      { icon: "https://cdn.simpleicons.org/kotlin/currentColor", text: "Kotlin" },
+      { icon: "https://cdn.simpleicons.org/luau/currentColor", text: "Luau" },
+      { icon: "https://cdn.simpleicons.org/php/currentColor", text: "PHP" },
+      { icon: "https://cdn.simpleicons.org/python/currentColor", text: "Python" },
+      { icon: "https://cdn.simpleicons.org/typescript/currentColor", text: "TypeScript" }
+    ]},
+    { label: "Frontend", items: [
+      { icon: "https://cdn.simpleicons.org/css/currentColor", text: "CSS" },
+      { icon: "https://cdn.simpleicons.org/expo/currentColor", text: "Expo" },
+      { icon: "https://cdn.simpleicons.org/html5/currentColor", text: "HTML" },
+      { icon: "https://cdn.simpleicons.org/jetpackcompose/currentColor", text: "Jetpack Compose" },
+      { icon: "https://cdn.simpleicons.org/react/currentColor", text: "React" },
+      { icon: "https://cdn.simpleicons.org/react/currentColor", text: "React Native" },
+      { icon: "https://cdn.simpleicons.org/vite/currentColor", text: "Vite" }
+    ]},
+    { label: "Backend & Databases", items: [
+      { icon: "https://cdn.simpleicons.org/appwrite/currentColor", text: "Appwrite" },
+      { icon: "https://cdn.simpleicons.org/django/currentColor", text: "Django" },
+      { icon: "https://cdn.simpleicons.org/firebase/currentColor", text: "Firebase" },
+      { icon: "https://cdn.simpleicons.org/mysql/currentColor", text: "MySQL" },
+      { icon: "https://cdn.simpleicons.org/nodedotjs/currentColor", text: "Node.js" },
+      { icon: "https://cdn.simpleicons.org/pandas/currentColor", text: "Pandas" },
+      { icon: "https://cdn.simpleicons.org/postgresql/currentColor", text: "PostgreSQL" },
+      { icon: "https://cdn.simpleicons.org/supabase/currentColor", text: "Supabase" }
+    ]},
+    { label: "Tools", items: [
+      { icon: "https://cdn.simpleicons.org/blender/currentColor", text: "Blender" },
+      { icon: "https://cdn.simpleicons.org/figma/currentColor", text: "Figma" },
+      { icon: "https://cdn.simpleicons.org/github/currentColor", text: "GitHub" },
+      { icon: "https://cdn.simpleicons.org/railway/currentColor", text: "Railway" },
+      { icon: "https://cdn.simpleicons.org/roblox/currentColor", text: "Roblox Studio" },
+      { icon: "https://cdn.simpleicons.org/vercel/currentColor", text: "Vercel" }
+    ]}
+  ];
+
+  var skillsContainer = document.getElementById("skills-container");
+
+  function renderSkills() {
+    skillsContainer.innerHTML = "";
+    skillsData.forEach(function (group) {
+      var groupDiv = document.createElement("div");
+      groupDiv.className = "skills__group";
+
+      var label = document.createElement("h3");
+      label.className = "skills__label";
+      label.textContent = group.label;
+      groupDiv.appendChild(label);
+
+      var list = document.createElement("ul");
+      list.className = "skills__chips";
+
+      group.items.forEach(function (item) {
+        var li = document.createElement("li");
+
+        var icon = document.createElement("span");
+        icon.className = "skill-icon";
+        icon.style.cssText = "mask-image:url('" + item.icon + "');-webkit-mask-image:url('" + item.icon + "')";
+        li.appendChild(icon);
+
+        li.appendChild(document.createTextNode(item.text));
+        list.appendChild(li);
+      });
+
+      groupDiv.appendChild(list);
+      skillsContainer.appendChild(groupDiv);
+    });
+  }
+
+  renderSkills();
 
   renderProjects("app");
 
