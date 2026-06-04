@@ -22,7 +22,7 @@ Static single-page portfolio. Vanilla HTML/CSS/JS, no build step. `package.json`
 - **Scroll reveal** uses `IntersectionObserver` (`threshold: 0.12`, `rootMargin: "0px 0px -30px 0px"`). Elements with class `reveal` get class `is-visible` once scrolled into view (observed once, then unobserved).
 - **Navigation** active state driven by another `IntersectionObserver` with `rootMargin: "-40% 0px -55% 0px"` on the 5 section IDs.
 - **Mobile nav** hamburger toggle at <=768px; `nav-open` class on header controls bar animation.
-- **Contact** email: `manicane4321@gmail.com`. CV link is a Google Drive URL.
+- **Contact** email: `johnwarrenmanicane1@gmail.com`. CV link is a Google Drive URL.
 
 ## Adding a project
 
