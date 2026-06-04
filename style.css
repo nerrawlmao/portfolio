@@ -24,6 +24,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 16px;
+  overscroll-behavior: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
