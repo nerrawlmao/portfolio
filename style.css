@@ -213,10 +213,10 @@ main {
 
 .hero {
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-top: calc(var(--header-height) * 0.5);
 }
 
 .hero__eyebrow {
