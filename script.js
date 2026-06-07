@@ -3,20 +3,9 @@
   var toggle = document.querySelector(".nav-toggle");
   var nav = document.querySelector(".site-nav");
   var navLinks = document.querySelectorAll(".site-nav a");
-  var navIndicator = document.querySelector(".nav-indicator");
   var tabButtons = document.querySelectorAll(".tab-btn");
 
   if (!header || !toggle || !nav) return;
-
-  function updateNavIndicator() {
-    if (!navIndicator) return;
-    var active = document.querySelector(".site-nav a.is-active");
-    if (!active) return;
-    var navRect = nav.getBoundingClientRect();
-    var linkRect = active.getBoundingClientRect();
-    navIndicator.style.width = linkRect.width + "px";
-    navIndicator.style.left = (linkRect.left - navRect.left) + "px";
-  }
 
   function setNavOpen(open) {
     header.classList.toggle("nav-open", open);
@@ -49,9 +38,6 @@
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
 
-  updateNavIndicator();
-  window.addEventListener("resize", updateNavIndicator);
-
   var sections = ["home", "about", "projects", "skills", "contact"]
     .map(function (id) { return document.getElementById(id); })
     .filter(Boolean);
@@ -65,7 +51,6 @@
         navLinks.forEach(function (a) {
           a.classList.toggle("is-active", a.getAttribute("data-nav") === id);
         });
-        updateNavIndicator();
       });
     }, { rootMargin: "-40% 0px -55% 0px", threshold: 0 });
 
