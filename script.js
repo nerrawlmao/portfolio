@@ -38,7 +38,12 @@
 
   function onScroll() {
     var sy = window.scrollY;
-    header.classList.toggle("is-hidden", sy > 8 && sy > lastScrollY);
+    if (sy <= 8) {
+      header.classList.remove("is-scrolled", "is-hidden");
+    } else {
+      header.classList.add("is-scrolled");
+      header.classList.toggle("is-hidden", sy > lastScrollY);
+    }
     lastScrollY = sy;
   }
   onScroll();
