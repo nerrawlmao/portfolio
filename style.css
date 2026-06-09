@@ -484,43 +484,51 @@ main {
   -webkit-mask-position: center;
 }
 
-.section--contact {
-  padding-bottom: 6rem;
-}
-
-.section--contact .section__title {
-  text-align: center;
-}
-
-.contact__text {
-  margin: 0 auto 2.5rem;
-  max-width: 24rem;
-  text-align: center;
-  font-size: 1rem;
-  color: var(--gray-500);
-  line-height: 1.6;
-}
-
-.contact__actions {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.75rem;
-}
-
 .site-footer {
   position: relative;
   z-index: 3;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 2rem 2rem 3rem;
+  padding: 4rem 2rem 3rem;
   text-align: center;
+}
+
+.site-footer__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.site-footer__icons {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.site-footer__icon {
+  display: inline-flex;
+  color: var(--gray-500);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.site-footer__icon svg {
+  width: 1.375rem;
+  height: 1.375rem;
+  display: block;
+}
+
+@media (hover: hover) {
+  .site-footer__icon:hover {
+    color: var(--black);
+    transform: translateY(-2px);
+  }
 }
 
 .site-footer__copy {
   font-size: 0.6875rem;
-  color: var(--gray-400);
-  letter-spacing: 0.04em;
+  color: var(--gray-500);
+  letter-spacing: 0.06em;
 }
 
 .reveal {
@@ -546,13 +554,9 @@ main {
 
   .section { padding-top: 5rem; padding-bottom: 5rem; }
 
-  .section--contact { padding-bottom: 5rem; }
+  .site-footer { padding: 3rem 1.25rem 2.5rem; }
 
-  .contact__actions { flex-direction: column; align-items: stretch; }
-  .contact__actions .btn { text-align: center; justify-content: center; }
-
-  .section--contact .section__title { text-align: left; }
-  .contact__text { text-align: left; margin-left: 0; }
+  .site-footer__icons { gap: 1.5rem; }
 }
 
 .liquid-ether-container {
