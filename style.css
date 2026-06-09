@@ -104,8 +104,8 @@ main {
 }
 
 .hero {
-  min-height: 100vh;
-  min-height: 100dvh;
+  height: 100vh;
+  height: 100dvh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -330,12 +330,7 @@ main {
 }
 
 @media (hover: hover) {
-  .project-card__image {
-    filter: grayscale(100%) contrast(0.9);
-  }
-
   .project-card:hover .project-card__image {
-    filter: grayscale(0%) contrast(1.05);
     transform: scale(1.03);
   }
 }

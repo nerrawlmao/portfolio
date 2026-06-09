@@ -1,14 +1,28 @@
 (function () {
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  window.scrollTo(0, 0);
+
+  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+
   var tabButtons = document.querySelectorAll(".tab-btn");
 
   var projects = [
-    { type: "app",  title: "To-Do",          desc: "A simple and modern to-do app for Android.",                                 img: "images/app/To-Do.png",                  alt: "To-Do app screenshot",                         langs: ["Kotlin", "Jetpack Compose"], links: [{ text: "Code", href: "https://github.com/nerrawlmao/to-do" }] },
-    { type: "game", title: "Cannon Clash",    desc: "A two-player artillery duel with wind and mass physics.",                     img: "images/game/Cannon Clash.png",          alt: "Cannon Clash game screenshot",                  langs: ["Java"],                links: [{ text: "Code", href: "https://github.com/nerrawlmao/cannon-clash" }] },
-    { type: "game", title: "Math Obby",       desc: "An obstacle course that quizzes players on math problems.",                   img: "images/game/Math Obby.png",             alt: "Math Obby game screenshot",                     langs: ["Luau", "Roblox Studio"], links: [{ text: "Play", href: "https://www.roblox.com/games/132959728970709/Math-Obby" }] },
-    { type: "web",  title: "Wildlife PH",     desc: "A site highlighting Philippine wildlife and conservation.",                    img: "images/web/Wildlife PH.png",            alt: "Wildlife PH website screenshot",                langs: ["HTML", "CSS", "JavaScript"], links: [{ text: "Live", href: "https://wildlife-ph.vercel.app/" }, { text: "Code", href: "https://github.com/nerrawlmao/wildlifeph" }] },
-    { type: "web",  title: "Watch",           desc: "A web experience built around browsing and discovery.",                        img: "images/web/Watch.png",                  alt: "Watch web app screenshot",                      langs: ["HTML", "CSS", "JavaScript"], links: [{ text: "Live", href: "https://jw-watch.vercel.app/" }, { text: "Code", href: "https://github.com/nerrawlmao/watch" }] },
-    { type: "other",title: "CueFlow",         desc: "A system for managing billiard tables, sessions, and payments.",               img: "images/other/CueFlow.png",              alt: "CueFlow system screenshot",                    langs: ["Java", "MySQL"],       links: [{ text: "Code", href: "https://github.com/nerrawlmao/cueflow" }] },
-    { type: "other",title: "Student Grading System", desc: "A system for managing student records and grades.",                     img: "images/other/Student Grading System.png", alt: "Student Grading System Management screenshot", langs: ["C"],                   links: [{ text: "Code", href: "https://github.com/nerrawlmao/student-grading-system-management" }] }
+    { type: "app",  title: "To-Do",            desc: "A personal project featuring a simple and modern Android to-do application with home screen widget support.", img: "images/app/To-Do.png",                  alt: "To-Do app screenshot",                         langs: ["Kotlin", "Jetpack Compose"], links: [{ text: "Code", href: "https://github.com/nerrawlmao/to-do" }] },
+    { type: "app",  title: "CueFlow",         desc: "A school research project for a billiard hall management system that handles table management, game sessions, payments, queueing, and reservations.", img: "images/app/CueFlow.png",                alt: "CueFlow system screenshot",                     langs: ["Java", "MySQL"],       links: [{ text: "Code", href: "https://github.com/nerrawlmao/cueflow" }] },
+    { type: "app",  title: "Comshop Manager", desc: "A school project designed to manage computer shop operations by tracking PC usage time and monitoring available and occupied units.", img: "images/app/Comshop Manager.png",        alt: "Comshop Manager app screenshot",                langs: ["Python", "Tkinter"],   links: [{ text: "Code", href: "https://github.com/nerrawlmao/comshop-manager" }] },
+    { type: "game", title: "Cannon Clash",    desc: "A school project featuring a two-player artillery game where wind and object mass affect the trajectory of each cannonball.", img: "images/game/Cannon Clash.png",          alt: "Cannon Clash game screenshot",                  langs: ["Java"],                links: [{ text: "Code", href: "https://github.com/nerrawlmao/cannon-clash" }] },
+    { type: "game", title: "Math Obby",       desc: "A personal project that combines obstacle-course gameplay with math challenges, requiring players to solve problems to progress through stages.", img: "images/game/Math Obby.png",             alt: "Math Obby game screenshot",                     langs: ["Luau", "Roblox Studio"], links: [{ text: "Play", href: "https://www.roblox.com/games/132959728970709/Math-Obby" }] },
+    { type: "web",  title: "Wildlife PH",     desc: "A group school project focused on showcasing Philippine endemic species through animal classifications and educational information.", img: "images/web/Wildlife PH.png",            alt: "Wildlife PH website screenshot",                langs: ["HTML", "CSS", "JavaScript"], links: [{ text: "Live", href: "https://wildlife-ph.vercel.app/" }, { text: "Code", href: "https://github.com/nerrawlmao/wildlifeph" }] },
+    { type: "web",  title: "Watch",           desc: "A personal project that curates free streaming resources for movies, anime, live TV, sports, dramas, manga, and TV shows in a single platform.", img: "images/web/Watch.png",                  alt: "Watch web app screenshot",                      langs: ["HTML", "CSS", "JavaScript"], links: [{ text: "Live", href: "https://jw-watch.vercel.app/" }, { text: "Code", href: "https://github.com/nerrawlmao/watch" }] },
+    { type: "other",title: "Student Grading System", desc: "A school project about a command-line interface application for managing student records, calculating grades, and tracking academic performance.",                     img: "images/other/Student Grading System.png", alt: "Student Grading System Management screenshot", langs: ["C"],                   links: [{ text: "Code", href: "https://github.com/nerrawlmao/student-grading-system-management" }] }
   ];
 
   var grid = document.querySelector(".project-grid");
